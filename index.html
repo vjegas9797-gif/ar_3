@@ -126,6 +126,22 @@
       </video>
       <img id="mask0" src="https://cdn.jsdelivr.net/gh/vjegas9797-gif/ar_3@main/assets/mask1b.png" crossorigin="anonymous">
       <img id="frame0" src="https://cdn.jsdelivr.net/gh/vjegas9797-gif/ar_3@main/assets/frame1b.png" crossorigin="anonymous">
+
+      <!-- Marker 1 Assets -->
+      <video id="video1"
+             src="https://cdn.jsdelivr.net/gh/vjegas9797-gif/ar_3@main/assets/media2.mp4"
+             preload="auto" loop playsinline webkit-playsinline crossorigin="anonymous">
+      </video>
+      <img id="mask1" src="https://cdn.jsdelivr.net/gh/vjegas9797-gif/ar_3@main/assets/mask2b.png" crossorigin="anonymous">
+      <img id="frame1" src="https://cdn.jsdelivr.net/gh/vjegas9797-gif/ar_3@main/assets/frame2b.png" crossorigin="anonymous">
+
+      <!-- Marker 2 Assets -->
+      <video id="video2"
+             src="https://cdn.jsdelivr.net/gh/vjegas9797-gif/ar_3@main/assets/media2.mp4"
+             preload="auto" loop playsinline webkit-playsinline crossorigin="anonymous">
+      </video>
+      <img id="mask2" src="https://cdn.jsdelivr.net/gh/vjegas9797-gif/ar_3@main/assets/mask2b.png" crossorigin="anonymous">
+      <img id="frame2" src="https://cdn.jsdelivr.net/gh/vjegas9797-gif/ar_3@main/assets/frame2b.png" crossorigin="anonymous">
     </a-assets>
 
     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
@@ -139,6 +155,28 @@
         <a-plane id="plane0" src="#video0" video-mask="mask: #mask0"></a-plane>
         <!-- Imagen PNG delante del video (marco/overlay) -->
         <a-image id="overlay0" src="#frame0" material="transparent: true; alphaTest: 0.5"></a-image>
+      </a-entity>
+    </a-entity>
+
+    <!-- Marcador 1 -->
+    <a-entity id="target1" mindar-image-target="targetIndex: 1">
+      <!-- Grupo para la rotación -->
+      <a-entity id="markerGroup1">
+        <!-- Video con máscara aplicada -->
+        <a-plane id="plane1" src="#video1" video-mask="mask: #mask1"></a-plane>
+        <!-- Imagen PNG delante del video (marco/overlay) -->
+        <a-image id="overlay1" src="#frame1" material="transparent: true; alphaTest: 0.5"></a-image>
+      </a-entity>
+    </a-entity>
+
+    <!-- Marcador 2 -->
+    <a-entity id="target2" mindar-image-target="targetIndex: 2">
+      <!-- Grupo para la rotación -->
+      <a-entity id="markerGroup2">
+        <!-- Video con máscara aplicada -->
+        <a-plane id="plane2" src="#video2" video-mask="mask: #mask2"></a-plane>
+        <!-- Imagen PNG delante del video (marco/overlay) -->
+        <a-image id="overlay2" src="#frame2" material="transparent: true; alphaTest: 0.5"></a-image>
       </a-entity>
     </a-entity>
   </a-scene>
@@ -279,6 +317,78 @@
         // Rotation
         rotationMin: 0,
         rotationMax: 10,
+        rotationSpeed: 0.5
+      },
+      { 
+        // MARCADOR 1
+        vidId: 'video1', 
+        planeId: 'plane1', 
+        overlayId: 'overlay1',
+        targetId: 'target1',
+        markerGroupId: 'markerGroup1',
+
+        // Global
+        globalScale: 1,
+        globalPositionX: 0,
+        globalPositionY: 0,
+        globalPositionZ: 0,
+        
+        // Video
+        videoScale: 1,
+        videoPositionX: 0,
+        videoPositionY: 0,
+        videoPositionZ: 0.02,
+        
+        // Frame/Overlay
+        overlayScale: 1,
+        framePositionX: 0,
+        framePositionY: 0,
+        framePositionZ: 0.05,
+        
+        // Mask
+        maskScale: 1,
+        maskPositionX: 0,
+        maskPositionY: 0,
+
+        // Rotation
+        rotationMin: 0,
+        rotationMax: 20,
+        rotationSpeed: 0.5
+      },
+      { 
+        // MARCADOR 2
+        vidId: 'video2', 
+        planeId: 'plane2', 
+        overlayId: 'overlay2',
+        targetId: 'target2',
+        markerGroupId: 'markerGroup2',
+
+        // Global
+        globalScale: 1,
+        globalPositionX: 0,
+        globalPositionY: 0,
+        globalPositionZ: 0,
+        
+        // Video
+        videoScale: 1,
+        videoPositionX: 0,
+        videoPositionY: 0,
+        videoPositionZ: 0.02,
+        
+        // Frame/Overlay
+        overlayScale: 1,
+        framePositionX: 0,
+        framePositionY: 0,
+        framePositionZ: 0.05,
+        
+        // Mask
+        maskScale: 1,
+        maskPositionX: 0,
+        maskPositionY: 0,
+
+        // Rotation
+        rotationMin: 0,
+        rotationMax: 20,
         rotationSpeed: 0.5
       }
     ];
